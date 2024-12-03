@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST" onsubmit="return validateForm()">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" >
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" >
+
+            <button type="submit">Login</button>
+        </form>
+        <p id="error-message" style="color: red; display: none;">Please fill out all fields correctly!</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- <script>
+        function validateForm() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMessage = document.getElementById("error-message");
+
+            // Validate that fields are not empty
+            if (username === "" || password === "") {
+                errorMessage.style.display = "block";
+                errorMessage.textContent = "Both fields are required.";
+                return false;
+            }
+
+            // Validate username length (min 3 characters)
+            if (username.length < 3) {
+                errorMessage.style.display = "block";
+                errorMessage.textContent = "Username must be at least 3 characters long.";
+                return false;
+            }
+
+            // Validate password length (min 6 characters)
+            if (password.length < 6) {
+                errorMessage.style.display = "block";
+                errorMessage.textContent = "Password must be at least 6 characters long.";
+                return false;
+            }
+
+            // Hide error message and allow form submission
+            errorMessage.style.display = "none";
+            return true;
+        }
+    </script> -->
+</body>
+</html>
+
+    <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
